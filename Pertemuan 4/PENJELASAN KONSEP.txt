@@ -1,0 +1,11 @@
+#ALARM Anti Maling#
+
+Jadi, saya membuat alarm dengan program dimana jika motion detector mendeteksi gerakan maka alarm menyala dan sebaliknya.
+Saya menggunakan MCU Board dan mengimport program python pada board tersebut dengan nama main.py.
+
+
+##Isues: sudah benar semua, akan tetapi tidak bisa menyala. Silahkan lihat pada gambar 'Kode', program langsung selesai ketika
+         dijalankan. Saya sudah menyerah berhari - hari takkunjung selesai. Jika anda berkenan, tolong beritahu solusinya.
+         Terimakasih  ~Isnan
+         
+#)*JAWAB:*
