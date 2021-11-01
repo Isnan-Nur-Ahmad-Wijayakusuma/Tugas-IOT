@@ -1,0 +1,41 @@
+1)Masuk server dan diconfigurasi pada fastEthernet0 nya dengan IPvAddress 1.1.1.1 dengan subnet mask 255.0.0.0. Pada services IoT dinyalakan, 
+2)lalu menjalankan web browser dengan URL 1.1.1.1 dan kemudian membuat akun yang memiliki username dan password cisco yang nantinya akan masuk pada Registration server. 
+  Pada remote mobilklik advanced lalu klik I/O Config untuk mengubah Network adapter menjadi PT-IOT-NM-1W, Pada config, IoT Servernya dihubungkan pada server address 1.1.1.1
+  dengan username dan password cisco.
+3)SSID diubah menjadi ptwifi1 dan menggunakan Auth WPA-PSK dengan password 12345678.
+4)Pada programming, buat file python lalu diisi dengan mengimport library. Lalu membuat program seperti berikut:
+  >>Membuat def onInputReceive dan pengkodisian: 
+  ->jika input sama dengan button 0, maka print going up   dan mobil bergerak ke sumbu-y dengan angka -20. Artinya akan bergerak ke atas  sebesar 20. 
+  ->jika input sama dengan button 1, maka print going down dan mobil bergerak ke sumbu-y dengan angka  20. Artinya akan bergerak ke bawah sebesar 20. 
+  ->jika input sama dengan button 2, maka print going left dan mobil bergerak ke sumbu-x dengan angka -20. Artinya akan bergerak ke kiri  sebesar 20.
+  ->jika input sama dengan button 3, maka print goingright dan mobil bergerak ke sumbu-x dengan angka  20. Artinya akan bergerak ke kanan sebesar 20. 
+  ->Jika pengkondisian diatas tidak ada yang dieksekusi, maka akan mengeprint stop
+
+  >>Membuat def main dengan states bernama Direction dengan type options:
+  ->options nya 0 sama dengan up.
+  ->optionsnya 1 sama dengan down.
+  ->optionsnya 2 sama dengan left. 
+  ->optionsnya 3 sama dengan right. 
+  ->Sama dengan stop, jika semua berjalan maka didelay 500
+
+5)Pada SBC, Default gatewaynya: 1.1.1.1 ,IoT Server dengan remote server,server addressnya yaitu 1.1.1.1 dengan username dan password cisco. 
+6)Mengatur FE IP Config IPv4 Addressnya: 1.1.1.2 dengan subnet mask: 255.0.0.0. Pada programming buat file python seperti berikut:
+  >>Membuat def getDir(x) dengan setup nomer button dan aksinya(kiri, kanan, atas, dan bawah).
+ 
+7)Pada MCU membuat program pada menu programming dengan membuat file python.
+  >>Import library
+  >>Membuat def main dengan mengeset usbnya.
+  >>Membuat pinMode(0,1,2,3) dan jika true, maka akan dijalankan pengkondisian:
+  ->jika digitalRead pada pin 0 HIGH maka akan dijalankan usb.write dengan kondisi left. 
+  ->Jika digitalRead pada pin 1 HIGH maka akan dijalankan usb.write dengan kondisi right. 
+  ->jika digitalRead pada pin 2 HIGH maka akan dijalankan usb.write dengan kondisi up. 
+  ->Jika digitalRead pada pin 3 HIGH maka akan dijalankan usb.write dengan kondisi down. 
+  ->Jika skondisi sebelumnya tidak dijalankan maka akan dijalankan else.
+
+8)Membuat file python pada setiap button dengan mengeset pin masing-masing sesuai kondisinya.
+9)Pada web browser mengetik URL 1.1.1.1 lalu sign in. Lalu setup alur program:
+  1.Jika SBC left maka remote mobilakan left
+  2.Jika SBC down maka remote mobilakan down
+  3.Jika SBC right maka remote mobilakan right
+  4.Jika SBC up maka remote mobilakan up
+  5.Jika SBC stop maka remote mobilakan stop
