@@ -1,0 +1,13 @@
+1)Pada server di fastEthernet0 nya mengatur IP Configuration dalam keadaan static dengan IPv4 Address 1.0.0.1 
+  dan Subnet Mask 255.0, pada web browsernya mengetik url 1.0.0.1 lalu meregister servernya dengan username isnandan password 12345. 
+2)Pada device, end device, dan sensornya, global setting pada config gatewaynya dalam keadaan static di set dengan mengikuti 
+  IPv4 Address server yaitu 1.0.0.1, IoT Servernya dipilih Remote Server dengan Server Address 1.0.0.1, username isnan dan password 12345.
+3)Kemudian connect sampai button connect berganti dengan refresh yang berarti sudah terhubung dengan baik. Pada FastEthernet0  menggunakan
+  IPv4 Address beda dengan device yang lain, motion menggunakan IPv Address 1.0.0.2, Door menggunakan IPv Address 1.0.0.3,
+  Light menggunakan IPv Address 1.0.0.4, dan PC menggunakan IPv Address 1.0.0.5 dan masing-masing menggunakan subnet mask yang sama yaitu 255.0.0.0.
+  Kemudian pada PC masuk ke menu Web Browser lalu login dengan username dan password yang telah di daftar kan tadi lalu akan terlihat perangkat 
+  yang terhubung IoT Server. Berikutnya menambahkan device conditions yaitu:
+a.Jika Motion Detector mendeteksi pergerakan maka pintu akan menyala secara otommatis,
+  jika motion tidak mendeteksi adanya pergerakan maka pintu akan Kembali terkunci
+b.Jika Motion Detector mendeteksi adanya pergerakan maka lampu akan menyala terang,
+  jika motion tidak mendeteksi adanya pergerakan maka lampu akan mati.
